@@ -8,7 +8,7 @@ Reshaping Payments - Wallets
 ## TikToken
 
 ### Overview
-This project is an e-commerce platform built with Flask, a lightweight web application framework in Python. The platform allows users to browse products, add items to a shopping cart, top up their account balance, transfer their balances and make purchases. The platform supports both cash and credit card top-ups, with exchange rates dynamically fetched from an API.
+This project is an e-commerce platform built with Flask, a lightweight web application framework in Python. The platform allows users to browse products, add items to a shopping cart, top up their account balance, transfer their balances, and make purchases. The platform supports both cash and credit card top-ups, with exchange rates dynamically fetched from an API.
 
 ### Features
 - User Authentication: Users can register, log in, and log out.
@@ -17,7 +17,9 @@ This project is an e-commerce platform built with Flask, a lightweight web appli
 - Top-Up Balance: Users can top up their account balance using cash or credit card. The balance is displayed in TikToken, with exchange rates fetched from an API.
 - Order History: Users can view their past orders.
 - Transfer: Users can transfer TikTokens to existing users. 
-- Transaction History: Users can view their history of pruchases, top-ups and transfers.
+- Transaction History: Users can view their history of purchases, top-ups, and transfers.
+- Security Feature: A 6-digit pin given upon registration is required for purchases and transfers.
+- Error Handling: Users will not be able to see the backend error message if an error is faced. 
 
 ### Prerequisites
 Python 3.7 or higher
@@ -39,28 +41,28 @@ SQLite
 - transactions.html: Transaction history template.
 - static/: Directory containing static files (CSS, images).
 - style.css: Main stylesheet.
-- database.db: contain examples of products, carts, users, orders and exchange rates. 
+- database.db: contain examples of products, carts, users, orders, and exchange rates. 
 
 ### Usage
 - User Registration:
-Navigate to the registration page and create a new account by providing a username and password and will receive a 6 digit pin. 
+Navigate to the registration page and create a new account by providing a username and password and will receive a 6-digit pin. 
 - User Login:
 Log in to your account using your registered username and password.
 - Browsing Products:
 Browse the available products on the home page or the products page. You can view product details, including price and quantity.
 - Shopping Cart:
-Add products to your cart and view the total amount. Remove items from the cart if needed. Will require the 6 digit pin to purchase. 
+Add products to your cart and view the total amount. Remove items from the cart if needed. Will require the 6-digit pin to purchase. 
 - Top-Up Balance:
-Top up your account balance using cash or credit card. For credit card top-ups, select the currency and enter your card details. The amount will be converted to TikTokens based on the current exchange rate.
+Top up your account balance using cash or a credit card. For credit card top-ups, select the currency and enter your card details. The amount will be converted to TikTokens based on the current exchange rate.
 - Viewing Orders:
 View your past orders and purchase history.
 - Transferring of TikTokens: 
-Allow users to transder TikTokens to other existing users and will require the 6 digit pin. 
+Allow users to transfer TikTokens to other existing users and will require the 6-digit pin. 
 - Transaction History:
-Allow users to track their top-ups, transfers and purchase history.
+Allow users to track their top-ups, transfers, and purchase history.
 
 ## Kiosk
-This is a Flask-based web application for a Kiosk Machine that allows users to log in and top up their balances in TikToken using various currencies. The application fetches real-time exchange rates using an external API.
+This is a prototype (Flask-based web application) for a Kiosk Machine that allows users to log in and top up their balances in TikToken using various currencies. The application fetches real-time exchange rates using an external API.
 
 ### Features
 - User Login
