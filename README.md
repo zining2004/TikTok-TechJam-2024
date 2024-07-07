@@ -84,9 +84,8 @@ This is a prototype (Flask-based web application) for a Kiosk Machine that allow
 - style.css: Main stylesheet.
 
 ## Future Improvements
-- Implement more robust error handling and validation.
 - Enhance the admin interface for better product management.
-- Add support for more payment methods.
+- Add support for more secure payments.
 - Improve UI/UX design.
 
 ## Acknowledgments
