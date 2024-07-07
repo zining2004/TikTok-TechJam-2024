@@ -294,28 +294,32 @@ def topup():
 
     user_id = session['user_id']
     conn = get_db_connection()
-    user = conn.execute('SELECT balance FROM users WHERE id = ?', (user_id,)).fetchone()
-
+    
     if request.method == 'POST':
         payment_method = request.form['payment_method']
+        currency = request.form['currency']
         amount = float(request.form['amount'])
+        exchange_rate = conn.execute('SELECT rate FROM exchange_rates WHERE currency = ?', (currency,)).fetchone()['rate']
+        tiktoken_amount = amount / exchange_rate
 
         if payment_method == 'credit_card':
             card_number = request.form['card_number']
             expiry_date = request.form['expiry_date']
             cvv = request.form['cvv']
             # Assume the credit card is processed here
-
-            conn.execute('UPDATE users SET balance = balance + ? WHERE id = ?', (amount, user_id))
-            conn.execute('INSERT INTO transactions (user_id, type, amount) VALUES (?, ?, ?)', (user_id, 'Top-Up', amount))
+            
+            user = conn.execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
+            new_balance = user['balance'] + tiktoken_amount
+            conn.execute('UPDATE users SET balance = ? WHERE id = ?', (new_balance, user_id))
+            conn.execute('INSERT INTO transactions (user_id, type, amount) VALUES (?, ?, ?)', (user_id, 'Top-Up', tiktoken_amount))
             conn.commit()
-            flash('Top-Up successful!', 'success')
-            return redirect(url_for('index'))
-        elif payment_method == 'cash':
-            flash('Please visit one of our kiosks to top-up with cash.', 'info')
-
+            flash('Top-up successful!', 'success')
+    
+    user = conn.execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
+    balance = user['balance']
     conn.close()
-    return render_template('topup.html', balance=user['balance'])
+
+    return render_template('topup.html', balance=round(balance, 2))
 
 @app.route('/orders')
 def orders():
