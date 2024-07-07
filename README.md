@@ -5,7 +5,7 @@
 ## Problem Statement
 Reshaping Payments - Wallets
 
-## Website
+## TikToken
 
 ### Overview
 This project is an e-commerce platform built with Flask, a lightweight web application framework in Python. The platform allows users to browse products, add items to a shopping cart, top up their account balance, transfer their balances and make purchases. The platform supports both cash and credit card top-ups, with exchange rates dynamically fetched from an API.
