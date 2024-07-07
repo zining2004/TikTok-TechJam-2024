@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transfer TikTokens
+{% endblock %}
+
+{% block main %}
+    <h2>Transfer TikTokens</h2>
+    <p>Your current balance: {{ "%.2f"|format(balance) }} TikToken</p>
+    <form action="{{ url_for('transfer') }}" method="post">
+        <div class="mb-3">
+            <label for="recipient_username">Recipient Username:</label>
+            <input type="text" id="recipient_username" name="recipient_username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="transfer_amount">Amount of TikTokens to Transfer:</label>
+            <input type="number" id="transfer_amount" name="transfer_amount" class="form-control" step="0.01" required>
+        </div>
+        <div class="mb-3">
+            <label for="pin">PIN:</label>
+            <input type="password" id="pin" name="pin" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Transfer</button>
+    </form>
+{% endblock %}
