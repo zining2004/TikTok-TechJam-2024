@@ -88,6 +88,6 @@ This is a Flask-based web application for a Kiosk Machine that allows users to l
 - Improve UI/UX design.
 
 ## Acknowledgments
-Flask: https://flask.palletsprojects.com/
-SQLite: https://www.sqlite.org/
-Exchange Rate API: https://www.exchangerate-api.com/
+- Flask: https://flask.palletsprojects.com/
+- SQLite: https://www.sqlite.org/
+- Exchange Rate API: https://www.exchangerate-api.com/
