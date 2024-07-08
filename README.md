@@ -92,3 +92,12 @@ This is a prototype (Flask-based web application) for a Kiosk Machine that allow
 - Flask: https://flask.palletsprojects.com/
 - SQLite: https://www.sqlite.org/
 - Exchange Rate API: https://www.exchangerate-api.com/
+- jersey_top.jpg: https://sg.shp.ee/j2ubVRq
+- scrunched_top.jpg: https://sg.shp.ee/L9ivnL3
+- cardigan.jpg: https://sg.shp.ee/2RGJi6s
+- lipstick.jpg: https://sg.shp.ee/yvCbpjr
+- cap.jpg: https://sg.shp.ee/2wqk1sr
+- huggable.jpg: https://sg.shp.ee/WxuAz7Z
+- earring.jpg: https://sg.shp.ee/k2N241B
+- ecommerce.jpg: https://images.app.goo.gl/MirBbvTQ5YHffkeJ8
+- logo.jpg: https://images.app.goo.gl/Gdyb9b61KELUcrBi9
